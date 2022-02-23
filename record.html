@@ -1,0 +1,945 @@
+1. a). Create a registration form using Bootstrap with the following fields Name of the student Password Branch(
+Dropdown list) Gender ( Radio Button) Interests( Check Box): Music , Sports,Entrepreneurship Submit button.
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap Registration Form</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="script1.js" defer></script>
+</head>
+
+<body>
+    <div class="container ">
+        <form action="" id="form" class="">
+            <div class="form-group mt-5 ms-5 me-5">
+
+                <div class="row ">
+                    <div class="col col-md-4">
+                        <label for="" class="form-label">Name</label>
+                        <input type="text" class="form-control" id="name" value="" required>
+                        <p id="nameid"></p>
+                    </div>
+                </div>
+                <div class="row ">
+                    <div class="col col-md-4">
+                        <label for="" class="form-label">Password</label>
+                        <input type="password" name="" id="pass" class="form-control">
+                        <p id="passid"></p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col col-md-4">
+                        <label for="" class="form-label">Branch</label>
+                        <select id="sel" class="form-select">
+                            <option selected disabled value="Branch">Branch</option>
+                            <option value="CSE">CSE</option>
+                            <option value="IT">IT</option>
+                            <option value="ECE">ECE</option>
+                            <option value="EEE">EEE</option>
+                            <option value="CIVIL">CIVIL</option>
+                            <option value="MECH">MECH</option>
+                        </select>
+                        <p id="selid"></p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col col-md-4"><label for="" class="form-label">Gender</label></div>
+                    <div class="form-check">
+                        <input type="radio" name="gender" id="rad1" class="form-check-input">
+                        <label for="" class="form-check-label">Male</label>
+                    </div>
+                    <div class="form-check">
+                        <input type="radio" name="gender" id="rad2" class="form-check-input">
+                        <label for="" class="form-check-label">Female</label>
+                    </div>
+                    <div class="form-check">
+                        <input type="radio" name="gender" id="rad3" class="form-check-input">
+                        <label for="" class="form-check-label">Other</label>
+                    </div>
+                    <p id="radid"></p>
+                </div>
+
+                <div class="row">
+                    <div class="col col-md-4"><label for="" class="form-label">Interests</label></div>
+
+                    <div class="form-check">
+                        <input class="form-check-input" id="che1" name="interests" type="checkbox">
+                        <label class="form-check-label" for="">Music</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" id="che2" name="interests" type="checkbox">
+                        <label class="form-check-label" for="">Sports</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" id="che3" name="interests" type="checkbox">
+                        <label class="form-check-label" for="checkvalidate">Entrepreneurship</label>
+                    </div>
+                    <p id="cheid"></p>
+                </div>
+                <div class="row">
+                    <div class="col col-md-4">
+                        <button id="btn" class="btn-primary">Submit</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
+
+
+JS CODE:
+
+let btn = document .getElementById("btn");
+btn.addEventListener("click",function(){
+let name = document.getElementById("name");
+if (name.value === ''){
+document.getElementById("nameid").innerHTML = "Please enter your name"
+}
+else{
+document.getElementById("nameid").innerHTML = ""
+}
+let pass = document.getElementById("pass");
+if(pass.value === ''){
+let t=document.getElementById("passid");
+document.getElementById("passid").innerHTML = "Please enter your password"
+}
+else{
+document.getElementById("passid").innerHTML = ""
+}
+let sel = document.getElementById("sel");
+if(sel.value === 'Branch'){
+document.getElementById("selid").innerHTML = "Please select your branch"
+}
+else{
+document.getElementById("selid").innerHTML = ""
+}
+let rad1 = document.getElementById("rad1");
+let rad2 = document.getElementById("rad2");
+let rad3 = document.getElementById("rad3");
+if(rad1.checked == false && rad2.checked == false && rad3.checked == false){
+document.getElementById("radid").innerHTML = "Please select your gender"
+}
+else{
+document.getElementById("radid").innerHTML = ""
+}
+let che1 = document.getElementById("che1");
+let che2 = document.getElementById("che2");
+let che3 = document.getElementById("che3");
+if(che1.checked == true || che2.checked == true || che3.checked == true){
+document.getElementById("cheid").innerHTML = ""
+}
+else{
+document.getElementById("cheid").innerHTML = "Please choose your interests"
+}
+})
+OUTPUT
+
+2. a) Create a NAVBAR using Bootstrap with the following items. SVECW ( Brand) Home Department Gallery Contact Us The
+Nav Items should be right aligned except the brand. For small screens the navbar should be collapsed
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navbar</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-dark bg-success navbar-expand-sm ml=5px">
+        <a href="" class="navbar-brand">SVECW</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsupportcontent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarsupportcontent">
+            <ul class="navbar navbar-nav ms-auto">
+                <li class="nav-link">HOME</li>
+                <li class="nav-link">DEPARTMENT</li>
+                <li class="nav-link">GALLERY</li>
+                <li class="nav-link">CONTACT US</li>
+            </ul>
+        </div>
+    </nav>
+</body>
+
+</html>
+Output:
+
+
+QUESTION 3: Create a web page that reflects the BIO-DATA of the student the page should have the following
+• Image of the student (rounded image)
+• Academic details
+• Hobbies
+• GITHUB profile link
+Source code:
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STUDENT BIO-DATA</title>
+</head>
+
+<body>
+    <table align="center"
+        style="position:relative;background-color:  aqua; height: 500px;border-radius: 20px;padding: 15px;">
+        <tr style="position: relative;">
+            <td style="padding-left: 70px;"><img src="image1.png" alt=""></td>
+        </tr>
+        <tr>
+            <td style="padding-left: 80px;">
+                <h4>students image</h4>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <h3>ACADEMIC DETAILS:</h3>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <h4>College name: </h4><input type="text" name="" id="">
+            </td>
+            <td style="position: relative;padding-bottom: 20px;">
+                <h4>Course:</h4><select name="" id="">
+                    <option value="">B.TECH</option>
+                    <option value="">M.TECH</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <h4>select branch :</h4> <select name="" id="">
+                    <option value="">BRANCH</option>
+                    <option value="">IT</option>
+                    <option value="">CSE</option>
+                    <option value="">ECE</option>
+                    <option value="">CIVIL</option>
+                    <option value="">MECHANICAL</option>
+                </select>
+            </td>
+            <td style="position: relative;padding-bottom: 20px;">
+                <h4>year of study:</h4>
+                <select name="" id="">
+                    <option value="">I</option>
+                    <option value="">II</option>
+                    <option value="">III</option>
+                    <option value="">IV</option>
+                </select>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <label for="">
+                    <h4>HOBBIES:<input type="text"></input></h4>
+                </label>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <h4>GITHUB PROFILE LINK:</h4>
+            </td>
+        </tr>
+        <tr>
+            <td><a href="https://github.com/20b01a12b6">github.com/20b01a12b6</a></td>
+        </tr>
+
+    </table>
+
+</body>
+
+</html>
+Output:
+
+4. Write JavaScript to validate the following fields of the registration page. 1. Name (Name should contains alphabets
+and the length should not be less than 6 characters).
+2. Password (Password should not be less than 6 characters length).
+3. E-mail id (should not contain any invalid and must follow the standard pattern name@domain.com) Phone number (Phone
+number should contain 10 digits only).
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap Registration Form</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="script1.js" defer></script>
+</head>
+
+<body>
+    <div class="container ">
+        <form action="" id="form" class="">
+            <div class="form-group mt-5 ms-5 me-5">
+
+                <div class="row ">
+                    <div class="col col-md-4">
+                        <label for="" class="form-label">Name</label>
+                        <input type="text" class="form-control" id="name" value="" required>
+                        <p id="nameid"></p>
+                    </div>
+                </div>
+                <div class="row ">
+                    <div class="col col-md-4">
+                        <label for="" class="form-label">Password</label>
+                        <input type="password" name="" id="pass" class="form-control">
+                        <p id="passid"></p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col col-md-4">
+                        <label for="" class="form-label">Branch</label>
+                        <select id="sel" class="form-select">
+                            <option selected disabled value="Branch">Branch</option>
+                            <option value="CSE">CSE</option>
+                            <option value="IT">IT</option>
+                            <option value="ECE">ECE</option>
+                            <option value="EEE">EEE</option>
+                            <option value="CIVIL">CIVIL</option>
+                            <option value="MECH">MECH</option>
+                        </select>
+                        <p id="selid"></p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col col-md-4"><label for="" class="form-label">Gender</label></div>
+                    <div class="form-check">
+                        <input type="radio" name="gender" id="rad1" class="form-check-input">
+                        <label for="" class="form-check-label">Male</label>
+                    </div>
+                    <div class="form-check">
+                        <input type="radio" name="gender" id="rad2" class="form-check-input">
+                        <label for="" class="form-check-label">Female</label>
+                    </div>
+                    <div class="form-check">
+                        <input type="radio" name="gender" id="rad3" class="form-check-input">
+                        <label for="" class="form-check-label">Other</label>
+                    </div>
+                    <p id="radid"></p>
+                </div>
+
+                <div class="row">
+                    <div class="col col-md-4"><label for="" class="form-label">Interests</label></div>
+
+                    <div class="form-check">
+                        <input class="form-check-input" id="che1" name="interests" type="checkbox">
+                        <label class="form-check-label" for="">Music</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" id="che2" name="interests" type="checkbox">
+                        <label class="form-check-label" for="">Sports</label>
+                    </div>
+                    <div class="form-check">
+                        <input class="form-check-input" id="che3" name="interests" type="checkbox">
+                        <label class="form-check-label" for="checkvalidate">Entrepreneurship</label>
+                    </div>
+                    <p id="cheid"></p>
+                </div>
+                <div class="row">
+                    <div class="col col-md-4">
+                        <button id="btn" class="btn-primary">Submit</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+</body>
+
+</html>
+
+
+JS CODE:
+
+let btn = document .getElementById("btn");
+btn.addEventListener("click",function(){
+let name = document.getElementById("name");
+if (name.value === ''){
+document.getElementById("nameid").innerHTML = "Please enter your name"
+}
+else{
+document.getElementById("nameid").innerHTML = ""
+}
+let pass = document.getElementById("pass");
+if(pass.value === ''){
+let t=document.getElementById("passid");
+document.getElementById("passid").innerHTML = "Please enter your password"
+}
+else{
+document.getElementById("passid").innerHTML = ""
+}
+let sel = document.getElementById("sel");
+if(sel.value === 'Branch'){
+document.getElementById("selid").innerHTML = "Please select your branch"
+}
+else{
+document.getElementById("selid").innerHTML = ""
+}
+let rad1 = document.getElementById("rad1");
+let rad2 = document.getElementById("rad2");
+let rad3 = document.getElementById("rad3");
+if(rad1.checked == false && rad2.checked == false && rad3.checked == false){
+document.getElementById("radid").innerHTML = "Please select your gender"
+}
+else{
+document.getElementById("radid").innerHTML = ""
+}
+let che1 = document.getElementById("che1");
+let che2 = document.getElementById("che2");
+let che3 = document.getElementById("che3");
+if(che1.checked == true || che2.checked == true || che3.checked == true){
+document.getElementById("cheid").innerHTML = ""
+}
+else{
+document.getElementById("cheid").innerHTML = "Please choose your interests"
+}
+})
+
+5. a) Use the below URL and display the data in the form of a Table( Use Bootstrap Table classes)
+https://jsonplaceholder.typicode.com/users
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap Registration Form</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+</head>
+
+<body>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Class</th>
+                <th scope="col">Heading</th>
+                <th scope="col">Heading</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <th scope="row">Default</th>
+                <td>Cell</td>
+                <td>Cell</td>
+            </tr>
+
+            <tr class="table-primary">
+                <th scope="row">Primary</th>
+                <td>Cell</td>
+                <td>Cell</td>
+            </tr>
+            <tr class="table-secondary">
+                <th scope="row">Secondary</th>
+                <td>Cell</td>
+                <td>Cell</td>
+            </tr>
+            <tr class="table-success">
+                <th scope="row">Success</th>
+                <td>Cell</td>
+                <td>Cell</td>
+            </tr>
+            <tr class="table-danger">
+                <th scope="row">Danger</th>
+                <td>Cell</td>
+                <td>Cell</td>
+            </tr>
+            <tr class="table-warning">
+                <th scope="row">Warning</th>
+                <td>Cell</td>
+                <td>Cell</td>
+            </tr>
+            <tr class="table-info">
+                <th scope="row">Info</th>
+                <td>Cell</td>
+                <td>Cell</td>
+            </tr>
+            <tr class="table-light">
+                <th scope="row">Light</th>
+                <td>Cell</td>
+                <td>Cell</td>
+            </tr>
+            <tr class="table-dark">
+                <th scope="row">Dark</th>
+                <td>Cell</td>
+                <td>Cell</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+
+</html>
+
+6. a) Design a form with the following( Use Bootstrap Container )
+● Name (Name should contain alphabets and the length should not be less than 6 characters).
+● Password (Password should not be less than 6 characters length).
+● E-mail id (should not contain any invalid and must follow the standard pattern name@domain.com)
+● Phone number (Phone number should contain 10 digits only). b) Create a GITHUB account with the name ‘2020_FWD_LAB_your
+RegdNo and host using github pages.
+SOURCE CODE:
+HTML:
+<html>
+
+<head>
+    <title>Registration Form</title>
+    <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+     -->
+    <link rel="stylesheet" href="form.css">
+    <script src="form.js" defer></script>
+    <script src="https://kit.fontawesome.com/524c3f8c5b.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="container">
+        <form action="" align="center">
+            <br>
+            <br><br>
+            <br>
+            <br>
+            <div class="row">
+                <i class="far fa-address-card"></i>
+                <input type="text" size=40 class="form-control" placeholder="Username" id="row1">
+                <span id="ro1"></span>
+            </div>
+            <br>
+            <br>
+            <div class="row">
+                <i class="fas fa-mail-bulk"></i>
+                <input type="text" size=40 class="form-control " id="row2" placeholder="Email">
+                <span id="ro2"></span>
+            </div>
+            <br>
+            <br>
+            <div class="row">
+                <i class="fas fa-lock"></i>
+                <input type="text" size=40 class="form-control " placeholder="password" id="row3">
+                <span id="ro3"></span>
+            </div>
+            <br>
+            <br>
+            <div class="row">
+
+                <i class="fas fa-key"></i>
+                <input type="text" size=40 class="form-control " placeholder="Retype Password" id="row4">
+                <span id="ro4"></span>
+            </div>
+            <br>
+            <br>
+            <div class="form-check row">
+                <input type="checkbox" name="" class="form-check-input " id="row5">
+                <label class="form-check-label">I agree to the <a href=""> terms and Conditions</a></label>
+                <span id="ro5"></span>
+            </div>
+            <br>
+            <div>
+                <button class="btn btn-primary" type="button" id="btn1">Submit</button>
+            </div>
+            <br>
+        </form>
+    </div>
+
+    <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-registration/draw1.webp" alt="Sample image" ;>
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>
+CSS:
+input{
+max-width: 500px;
+height: 30px;
+}
+i{
+image-rendering: optimizeSpeed;
+}
+img{
+max-height: 450px;
+max-width: 450px;
+position: relative;
+bottom: 500px;
+left: 700px;
+}
+.container{
+position: relative;
+top:150px;
+}
+span{
+color: red;
+}
+JAVASCRIPT:
+let b1=document.getElementById("btn1");
+b1.addEventListener("click",function()
+{
+let r1=document.getElementById("row1").value;
+let r2=document.getElementById("row2").value;
+let r3=document.getElementById("row3").value;
+let r4=document.getElementById("row4").value;
+let r5=document.getElementById("row5");
+let a= /^[a-zA-Z0-9]+$/;
+if(r1.match(a))
+{
+document.getElementById("ro1").innerHTML="";
+console.log("Hi")
+}
+else{
+document.getElementById("ro1").innerHTML="please enter valid username";
+console.log("hello");
+}
+if(r3.match(/[a-z]/g) && r3.match(/[A-Z]/g) && r3.match(/[0-9]/g) && r3.match(/[^a-zA-Z/d]/g) && r3.length<=8) {
+    document.getElementById("ro3").innerHTML="" ; } else {
+    document.getElementById("ro3").innerHTML="please enetr valid password" ; } if(r3===r4) {
+    document.getElementById("ro4").innerHTML="" ; } else{
+    document.getElementById("ro4").innerHTML="password does not match" ; } if(/@gmail\.com$/.test(r2)) {
+    document.getElementById("ro2").innerHTML="" ; } else{
+    document.getElementById("ro2").innerHTML="please enter valid mail" ; } if(r5.checked) {
+    document.getElementById("ro5").innerHTML="" ; } else{ document.getElementById("ro5").innerHTML="Tick the mark" ; }
+    }) OUTPUT: 7. a) Develop the following page using Bootstrap Cards <!DOCTYPE html>
+    <html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <style>
+            button {
+                align-items: center;
+                justify-content: center;
+                width: 100%;
+            }
+        </style>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"
+            defer></script>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+    </head>
+
+    <body>
+        <div class="table border-outline-primary">
+            <div class="row ">
+                <div class="col col-lg-4 ">
+                    <div class="card card card border-primary">
+                        <div class="card-header">
+                            <div class="card-title h1 text-center">
+                                Free
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="text-center"><span class="display-4 ">$0</span> <span
+                                    class="display-6">/mo</span>
+                            </div>
+                            <div class="card-text text-center mt-2">10 users included <br> 2 GB of storage <br> Email
+                                support
+                                <br> Help center access
+                            </div>
+                            <button class="btn btn-outline-primary btn-lg mt-2 text-primary ">Sign up for free</button>
+
+                        </div>
+
+
+                    </div>
+                </div>
+                <div class="col col-lg-4 ">
+                    <div class="card card card border-primary">
+                        <div class="card-header">
+                            <div class="card-title h1 text-center">
+                                Pro
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="text-center"><span class="display-4 ">$15</span> <span
+                                    class="display-6">/mo</span>
+                            </div>
+                            <div class="card-text text-center mt-2">10 users included <br> 2 GB of storage <br> Email
+                                support
+                                <br> Help center access
+                            </div>
+                            <button class="btn btn-primary btn-lg mt-2 text-white ">Get started</button>
+
+                        </div>
+
+
+                    </div>
+                </div>
+                <div class="col col-lg-4 ">
+                    <div class="card card card border-primary">
+                        <div class="card-header text-white bg-primary">
+                            <div class="card-title h1 text-center">
+                                Free
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="text-center"><span class="display-4 ">$29</span> <span
+                                    class="display-6">/mo</span>
+                            </div>
+                            <div class="card-text text-center mt-2">10 users included <br> 15 GB of storage <br> Email
+                                support
+                                <br> Help center access
+                            </div>
+                            <button class="btn btn-primary btn-lg mt-2 text-white ">contact us</button>
+
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        OUTPUT:
+
+
+
+
+
+        8. a) Create a NAVBAR using CSS with the following items.The Background color should be Black and the text size
+        should be 16px. Use CSS GRID Home Docs Examples Contact Us The Nav Items should be right aligned.When the user
+        hover the mouse over any nav item, the background colour and text color of that item should be changed b) Design
+        the above using FIGMA.
+        <!DOCTYPE html>
+        <html>
+
+        <head>
+            <link rel="stylesheet" href="assign.css">
+        </head>
+
+        <body>
+            <nav>
+                <ul>
+                    <li id="w"><a href="#">HOME</a></li>
+                    <li id="move"> <a href="#">DOCS</a></li>
+                    <li id="m"><a href="#">EXAMPLES</a></li>
+                    <li id="p"><a href="#">CONTACT US</a></li>
+
+                </ul>
+            </nav>
+        </body>
+
+        </html>
+
+
+
+        Css part
+        ul{
+        list-style-type : none;
+        font-size:16px ;
+
+        }
+        a{
+
+        text-decoration: none;
+        color :white;
+        }
+        li{
+        display: inline;
+        }
+        #w{
+        padding-left: 1050px;
+
+        }
+        #move{
+        padding-left:10px;
+        }
+        #m{
+        padding-left: 10px;
+        }
+        #p{
+        padding-left: 10px;
+        }
+
+        nav{
+        background-color: black;
+        width: 100%;
+        height: 50%;
+
+        }
+        a:hover{
+        color:red;
+        background-color: yellow;
+        }
+
+        Output:
+
+        9. a) Design a “registration form” using CSS with the following fields. Name(Text Field) Password(password
+        field) E.mail id(text field) Phone number(text field) Gender(radio button) Languages known(check boxes)
+        Address(text area) b) Validate the form with the following rules. Password length should be more than 6
+        characters and email id should have valid
+        HTML:
+
+        <!DOCTYPE html>
+        <html lang="en">
+
+        <head>
+            <meta charset="UTF-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Document</title>
+            <link rel="stylesheet" href="styles.css">
+            <script src="script.js" defer></script>
+        </head>
+
+        <body style="background-color: aquamarine;">
+            <img src="" alt="" srcset="wall paper.jpg">
+            <img src="" alt="" srcset="wall paper.jpg ;background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100%;">
+            <h1 align="center">REGISTRATION FORM</h1>
+            <table align="center">
+                <tr>
+                    <td><label>Username :</label></td>
+                    <td><input type="text" id="names"></td>
+                </tr>
+                <tr>
+                    <td> <label>Password :</label></td>
+                    <td> <input type="password" id="password"></td>
+                </tr>
+                <tr>
+                    <td> <label>E Mail id :</label></td>
+                    <td> <input type="text" id="email"></td>
+                </tr>
+                <tr>
+                    <td> <label>Phone No:</label></td>
+                    <td> <input type="text" id="number"></td>
+                </tr>
+                <tr>
+                    <td> <label>Gender :</label></td>
+                    <td> female<input type="radio" id="male" name="kk">
+                        male<input type="radio" id="female" name="kk"></td>
+                </tr>
+                <tr>
+                    <td><label>Languages :</label></td>
+                    <td> English <input type="checkbox" id="eng">
+                        Telugu <input type="checkbox" id="tel">
+                        Hindi <input type="checkbox" id="hin">
+                        Tamil <input type="checkbox" id="tamil"></td>
+                </tr>
+                <tr>
+                    <td><label>Address :</label></td>
+                    <td>
+                        <textarea name="Address" id="Address"></textarea>
+                    </td>
+
+                </tr>
+                <tr>
+                    <td></td>
+                    <td><button onclick=callme();>sign in</button></td>
+                </tr>
+            </table>
+        </body>
+
+        </html>
+
+        CSS:
+        label{
+        font-size: 30px;
+
+        }
+
+        button{
+        padding: 20px;
+        }
+        td{
+        padding: 20px;
+        }
+        input{
+        padding: 15px;
+        font-size: 30px
+        }
+
+
+
+
+
+        10. Write a JavaScript to design a simple calculator to perform the following operations: a) sum b) product
+        c)difference d)quotient
+
+        <!DOCTYPE html>
+        <html lang="en">
+
+        <head>
+            <meta charset="UTF-8">
+            <meta http-equiv="X-UA-Compatible" content="IE=edge">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Document</title>
+
+            <head>
+            </head>
+
+        <body>
+            <script>
+                function insert(num) {
+                    document.form.textView.value = document.form.textView.value + num;
+                }
+                function equal() {
+                    var exp = document.form.textView.value;
+                    if (exp) {
+                        document.form.textView.value = eval(document.form.textView.value);
+                    }
+                }
+                function c() {
+                    document.form.textView.value = " ";
+                }
+            </script>
+            <center>
+                <form name="form">
+                    <input type="text" name="textView" /><br>
+                    <input type="button" value="1" onclick="insert(1)" />
+                    <input type="button" value="2" onclick="insert(2)" />
+                    <input type="button" value="3" onclick="insert(3)" />
+                    <input type="button" value="+" onclick="insert('+')" />
+                    <br><br>
+                    <input type="button" value="4" onclick="insert(4)" />
+                    <input type="button" value="5" onclick="insert(5)" />
+                    <input type="button" value="6" onclick="insert(6)" />
+                    <input type="button" value="-" onclick="insert('-')" />
+                    <br><br>
+                    <input type="button" value="6" onclick="insert(6)" />
+                    <input type="button" value="7" onclick="insert(7)" />
+                    <input type="button" value="8" onclick="insert(8)" />
+                    <input type="button" value="*" onclick="insert('*')" />
+                    <br><br>
+                    <input type="button" value="0" onclick="insert(0)" />
+                    <input type="button" value="/" onclick="insert('/')" />
+                    <input type="button" value="=" onclick="equal()" />
+                    <input type="button" value="C" onclick="c()" />
+                    <br>
+                </form>
+            </center>
+        </body>
+
+        </html>
